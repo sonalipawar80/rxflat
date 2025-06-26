@@ -1,0 +1,41 @@
+<div class="row">
+    <div class="col-12">
+        <div class="card my-4" *ngFor="let user of usersArr">
+            <div class="card-body" style="background-color: grey;">
+                <mat-card-title >
+                    {{user.name}}
+                </mat-card-title>
+            </div>
+            <mat-card>
+                <div class="row">
+                    <div class="col-md-6">
+                        <h2>PERSONAL DETAILS </h2>
+                        <p><strong>Name:</strong>{{user.name}}</p>
+                        <p><strong>Email:</strong>{{user.email}}</p>
+                        <p><strong>Contact:</strong>{{user.phone}}</p>
+                        <p><strong>Username:</strong>{{user.username}}</p>
+                    </div>
+                    <div class="col-md-6 mrn">
+                        <h2>POST</h2>
+                        <ul class="list-group">
+                            <li class="list-group-item" *ngFor="let blog of user.postsArr">
+                                {{blog.title}}
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </mat-card>
+        </div>
+    </div>
+</div>
+
+
+<!-- 
+<mat-card>
+  <mat-card-title>Actions Buttons</mat-card-title>
+  <mat-card-subtitle>Start</mat-card-subtitle>
+  <mat-card-actions>
+    <button mat-button>LIKE</button>
+    <button mat-button>SHARE</button>
+  </mat-card-actions>
+</mat-card> -->
