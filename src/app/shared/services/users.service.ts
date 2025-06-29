@@ -1,7 +1,7 @@
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { postUser, User } from '../models/user';
+import { IPost, IpostUser, IUser } from '../models/user';
 
 @Injectable({
   providedIn: 'root'
@@ -14,11 +14,12 @@ USER_URL:string=`https://jsonplaceholder.typicode.com/users`;
     private _http:HttpClient
   ) { }
 
-  getAllUser():Observable<User[]>{
-    return this._http.get<User[]>(this.USER_URL)
+  getAllUsers():Observable<IUser[]>{
+    return this._http.get<IUser[]>(this.USER_URL)
   }
 
-  getPostofUser(id:number):Observable<postUser[]>{
-   return this._http.get<postUser[]>(`https://jsonplaceholder.typicode.com/posts?userId=${id}`)
+  getAllPostByUser(id:number):Observable<IPost[]>{
+    return this._http.get<IPost[]>(`https://jsonplaceholder.typicode.com/posts?userId=${id}`)
   }
+
 }

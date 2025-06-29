@@ -19,7 +19,7 @@ export interface Company {
   bs: string;
 }
 
-export interface User {
+export interface IUser {
   id: number;
   name: string;
   username: string;
@@ -30,7 +30,7 @@ export interface User {
   company: Company;
 }
 
-export interface Post {
+export interface IPost {
   userId: number;
   id: number;
   title: string;
@@ -38,7 +38,7 @@ export interface Post {
 }
 
 
-export interface postUser{
+export interface IpostUser{
   id: number;
   name: string;
   username: string;
@@ -47,5 +47,5 @@ export interface postUser{
   phone: string;
   website: string;
   company: Company;
-  postsArr:Post
+  postsArr:IPost[]
 }

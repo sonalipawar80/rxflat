@@ -1,0 +1,60 @@
+<div class="row">
+    <div class="col-12">
+        <div class="card cardContainer my-4" *ngFor="let prod of productArr">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-4" style="border-right: 1px solid rgb(190, 189, 189);">
+                        <img [src]="prod.image" [alt]="prod.title" class="prodImg">
+                        <div class="discription">
+                            <strong>Product Description</strong> {{prod.description}}
+                        </div>
+                    </div>
+                    <div class="col-md-6" style="border-right: 1px solid rgb(190, 189, 189);">
+                        <div class="mainHeading">
+                            <h1> {{prod.title}}</h1>
+                        </div>
+                        <ol class="">
+                            <li class="" *ngFor="let post of prod.review">
+                                {{post.title}}
+                            </li>
+                        </ol>
+                        <div class="buttons">
+                            <button mat-raised-button color="primary">Add To Card </button>
+                            <button mat-raised-button color="warn">Buy Now </button>
+                        </div>
+
+                    </div>
+                    <div class="col-md-2">
+                        <div class="rating">
+                            <ng-container *ngFor="let star of star">
+                                <i class="text-warning" [ngClass]="prod.rating.rate>=star? 'fa-solid fa-star' 
+                        :prod.rating.rate>=star-0.7 ?'fa-solid fa-star-half-stroke'
+                        : 'fa-regular fa-star'">
+                                </i>
+                            </ng-container>
+                            ({{prod.rating.count}})
+                        </div>
+                        <div class="price my-2">
+                            <strong>Product Price: </strong>{{prod.price}}
+                        </div>
+                        <div class="catg my-2">
+                            <strong>Product Category: </strong>{{prod.category}}
+                        </div>
+
+                        <div class="prodQuntity">
+                            <button mat-mini-fab color="primary" (click)="onclick(true)"
+                                aria-label="Example icon button with a home icon">
+                                <mat-icon>addition</mat-icon>
+                            </button>
+                            {{count}}
+                            <button mat-mini-fab color="warn" (click)="onclick(false)"
+                                aria-label="Example icon button with a home icon">
+                                <mat-icon>remove</mat-icon>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

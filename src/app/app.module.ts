@@ -7,19 +7,27 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MergeMapUsersComponent } from './shared/components/merge-map-users/merge-map-users.component';
 import { MergeMapPostsComponent } from './shared/components/merge-map-posts/merge-map-posts.component';
 import {MatCardModule} from '@angular/material/card';
+import { MergeMapProdComponent } from './shared/components/merge-map-prod/merge-map-prod.component';
+import { NavBarComponent } from './shared/components/nav-bar/nav-bar.component';
+import {MatButtonModule} from '@angular/material/button';
+import {MatIconModule} from '@angular/material/icon';
 
 @NgModule({
   declarations: [
     AppComponent,
     MergeMapUsersComponent,
-    MergeMapPostsComponent
+    MergeMapPostsComponent,
+    MergeMapProdComponent,
+    NavBarComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     HttpClientModule,
-    MatCardModule
+    MatCardModule,
+    MatButtonModule,
+    MatIconModule
   ],
   providers: [],
   bootstrap: [AppComponent]
